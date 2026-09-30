@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RS Sehat Sentosa</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f9fb;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #087f8c;
+            color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #b9f2ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #b9f2ff;
+        }
+
+        /* BERANDA */
+        #beranda {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #e5faff, #ffffff);
+        }
+
+        .hero-text {
+            width: 55%;
+        }
+
+        .hero-text h1 {
+            font-size: 45px;
+            color: #087f8c;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #087f8c;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #055b65;
+        }
+
+        .hospital-icon {
+            font-size: 150px;
+        }
+
+        /* UMUM */
+        section {
+            padding: 70px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            color: #087f8c;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* DOKTER */
+        .dokter-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .dokter {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .dokter-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .dokter h3 {
+            color: #087f8c;
+            margin-bottom: 8px;
+        }
+
+        /* LAYANAN */
+        .layanan-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .layanan {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .layanan-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .layanan h3 {
+            color: #087f8c;
+            margin-bottom: 10px;
+        }
+
+        /* FORM */
+        .form-container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #087f8c;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #055b65;
+        }
+
+        /* KONTAK */
+        .kontak {
+            background: #087f8c;
+            color: white;
+            text-align: center;
+        }
+
+        .kontak h2 {
+            margin-bottom: 25px;
+        }
+
+        .kontak p {
+            margin: 10px;
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #055b65;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* RESPONSIVE HP */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            #beranda {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 35px;
+            }
+
+            .hospital-icon {
+                font-size: 100px;
+                margin-top: 30px;
+            }
+
+            .dokter-container,
+            .layanan-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">🏥 RS <span>Sehat Sentosa</span></div>
+
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#dokter">Dokter</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- BERANDA -->
+    <section id="beranda">
+
+        <div class="hero-text">
+            <h1>Selamat Datang di RS Sehat Sentosa</h1>
+
+            <p>
+                Rumah sakit dengan pelayanan kesehatan yang nyaman,
+                profesional, dan terpercaya untuk seluruh keluarga.
+            </p>
+
+            <a href="#booking" class="btn">
+                📅 Daftar Sekarang
+            </a>
+        </div>
+
+        <div class="hospital-icon">
+            🏥
+        </div>
+
+    </section>
+
+
+    <!-- DOKTER -->
+    <section id="dokter">
+
+        <h2 class="judul">👨‍⚕️ Daftar Dokter</h2>
+
+        <div class="dokter-container">
+
+            <div class="dokter">
+                <div class="dokter-icon">👨‍⚕️</div>
+                <h3>dr. Andi Saputra</h3>
+                <p>Dokter Umum</p>
+                <p>Senin - Jumat</p>
+            </div>
+
+            <div class="dokter">
+                <div class="dokter-icon">👩‍⚕️</div>
+                <h3>dr. Siti Rahma</h3>
+                <p>Dokter Anak</p>
+                <p>Senin - Sabtu</p>
+            </div>
+
+            <div class="dokter">
+                <div class="dokter-icon">👨‍⚕️</div>
+                <h3>dr. Budi Santoso</h3>
+                <p>Dokter Gigi</p>
+                <p>Selasa - Sabtu</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LAYANAN -->
+    <section id="layanan">
+
+        <h2 class="judul">🩺 Layanan Rumah Sakit</h2>
+
+        <div class="layanan-container">
+
+            <div class="layanan">
+                <div class="layanan-icon">🚑</div>
+                <h3>IGD 24 Jam</h3>
+                <p>
+                    Pelayanan gawat darurat tersedia selama 24 jam.
+                </p>
+            </div>
+
+            <div class="layanan">
+                <div class="layanan-icon">🩺</div>
+                <h3>Poli Umum</h3>
+                <p>
+                    Pemeriksaan kesehatan untuk berbagai keluhan umum.
+                </p>
+            </div>
+
+            <div class="layanan">
+                <div class="layanan-icon">👶</div>
+                <h3>Poli Anak</h3>
+                <p>
+                    Pelayanan kesehatan khusus untuk anak-anak.
+                </p>
+            </div>
+
+            <div class="layanan">
+                <div class="layanan-icon">🦷</div>
+                <h3>Poli Gigi</h3>
+                <p>
+                    Pemeriksaan dan perawatan kesehatan gigi.
+                </p>
+            </div>
+
+            <div class="layanan">
+                <div class="layanan-icon">💊</div>
+                <h3>Apotek</h3>
+                <p>
+                    Penyediaan obat sesuai resep dokter.
+                </p>
+            </div>
+
+            <div class="layanan">
+                <div class="layanan-icon">🔬</div>
+                <h3>Laboratorium</h3>
+                <p>
+                    Pemeriksaan laboratorium untuk membantu diagnosis.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+    <section id="booking">
+
+        <h2 class="judul">📅 Form Pendaftaran / Booking</h2>
+
+        <div class="form-container">
+
+            <form id="bookingForm">
+
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+                </div>
+
+                <div class="form-group">
+                    <label>No. HP</label>
+                    <input type="tel" id="telepon" placeholder="08xxxxxxxxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tanggal Kunjungan</label>
+                    <input type="date" id="tanggal" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Pilih Dokter</label>
+
+                    <select id="dokterPilihan" required>
+                        <option value="">-- Pilih Dokter --</option>
+                        <option>dr. Andi Saputra - Dokter Umum</option>
+                        <option>dr. Siti Rahma - Dokter Anak</option>
+                        <option>dr. Budi Santoso - Dokter Gigi</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Keluhan</label>
+
+                    <textarea
+                        id="keluhan"
+                        rows="4"
+                        placeholder="Tuliskan keluhan Anda..."
+                        required>
+                    </textarea>
+
+                </div>
+
+                <button type="submit">
+                    Kirim Pendaftaran
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAK -->
+    <section id="kontak" class="kontak">
+
+        <h2>📞 Hubungi Kami</h2>
+
+        <p>📍 Jl. Kesehatan No. 10, Indonesia</p>
+
+        <p>📞 0812-3456-7890</p>
+
+        <p>📧 info@rssehatsentosa.com</p>
+
+        <p>🕐 IGD buka 24 jam</p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 RS Sehat Sentosa | Website Rumah Sakit
+        </p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        document
+            .getElementById("bookingForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                let nama =
+                    document.getElementById("nama").value;
+
+                let dokter =
+                    document.getElementById("dokterPilihan").value;
+
+                let tanggal =
+                    document.getElementById("tanggal").value;
+
+                alert(
+                    "Pendaftaran berhasil!\n\n" +
+                    "Nama: " + nama + "\n" +
+                    "Dokter: " + dokter + "\n" +
+                    "Tanggal: " + tanggal
+                );
+
+                this.reset();
+
+            });
+
+    </script>
+
+</body>
+</html>
